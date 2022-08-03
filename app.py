@@ -61,7 +61,9 @@ def query_db(query, args=(), one=False):
 
 def insert_db(query, args=()):
     '''
-    * This is a helper function to query the current database connection
+    * This is a helper function to query the current database connection.
+    * Define the SQLite INSERT Query (need to know the table and the column name in which you want to insert data).
+    # Execute
     '''
     # get ref to the database
     db = get_db()
@@ -135,6 +137,7 @@ def insert():
         lng = float(request.args['lng'])
         lat = float(request.args['lat'])
         story = request.args['story']
+        
     except (BadRequestKeyError, ValueError):
         return dumps({'success': False})
 
